@@ -1,0 +1,30 @@
+
+<div class="row">
+	<SPAN>Select Filter</span>
+	<div class="col col-lg-6 col-md-6 col-sm-6">
+		<select class="form-control" ng-model="showCorrect" ng-options="e as e.name for e in options" ng-change="changeOption()"></select>
+	</div>
+	
+</div>
+
+<table>
+	<thead>
+		<tr>
+			<th>Sr. No.</th>
+			<th>User Name</th>
+			<th>Question 1</th>
+			<th>Question 2</th>
+			<th>Question 3</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="(index, survey) in surveys | filter:cusFilter">
+			<td>{{index+1}}</td>
+			<td>{{survey.username}}</td>
+			<td>{{survey.question1}}</td>
+			<td>{{survey.question2}}</td>
+			<td>{{survey.question3}}</td>
+		</tr>
+	</tbody>
+</table>
+
